@@ -2,7 +2,15 @@ import React from "react";
 import { useState } from "react";
 import coding from "./../assets/coding.png";
 
+//Controlled and uncontrolled react forms!
+//https://www.freecodecamp.org/news/how-to-build-forms-in-react/
+
 export default function Signup() {
+  const [First, setFirstName] = useState("");
+  const [Last, setLastName] = useState("");
+  const [Mail, setEmail] = useState("");
+  const [Pass, setPassword] = useState("");
+
   return (
     <div className="grid grid-cols-2 h-screen min-w-full">
       <div className=" bg-[#23155b] ">
@@ -16,24 +24,28 @@ export default function Signup() {
               type="text"
               name="First Name"
               placeholder="First Name"
+              value={First}
               className=" bg-[#23155b] rounded py-1 text-white placeholder:p-2"
             />
             <input
               type="text"
               name="Last Name"
               placeholder="Last Name"
+              value={Last}
               className=" bg-[#23155b] rounded py-1 text-white placeholder:p-2"
             />
             <input
               type="text"
               name="Email"
               placeholder="Email"
+              value={Mail}
               className=" bg-[#23155b] rounded py-1 text-white placeholder:p-2"
             />
             <input
               type="text"
               name="Password"
               placeholder="Password"
+              value={Pass}
               className=" bg-[#23155b] rounded py-1 text-white placeholder:p-2"
             />
           </form>
