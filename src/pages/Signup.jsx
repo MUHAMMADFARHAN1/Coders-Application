@@ -12,21 +12,33 @@ import { useNavigate } from "react-router";
 export default function Signup() {
   const [First, setFirstName] = useState("");
   const [Last, setLastName] = useState("");
-  const [Mail, setEmail] = useState("yuiyuiyu");
-  const [Pass, setPassword] = useState("yuiyui");
+  const [Mail, setEmail] = useState("");
+  const [Pass, setPassword] = useState("");
+
+  let navigate = useNavigate();
 
   //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
-  //https://uibakery.io/regex-library/email
+  //https://medium.com/@python-javascript-php-html-css/the-best-regular-expression-for-email-address-verification-42bf83ba2885
 
-  let Passregex = "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$";
-  let MailRegex = "/^S+@S+.S+$/";
+  let Passregex = /^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$/;
+  let MailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // You can process the login data here
+    let result = MailRegex.test(Mail);
+    console.log(result);
+    if (!MailRegex.test(Mail)) {
+      alert("wrong email");
+    }
+    // else if ()
 
-    console.log("Email:", Mail);
-    console.log("Password:", Pass);
+    // else if ()
+    else {
+      navigate("/signin");
+    }
+    // console.log("Email:", Mail);
+    // console.log("Password:", Pass);
   };
 
   return (
