@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import coding from "./../assets/coding.png";
+import { NavLink } from "react-router";
 
 export default function Signin() {
   return (
@@ -28,7 +29,7 @@ export default function Signin() {
           <div>
             <button className="bg-blue-600">Login</button>
             <p>
-              Already have an account? <span>Signup</span>
+              Already have an account? <NavLink to="/">Signup</NavLink>
             </p>
           </div>
         </div>
