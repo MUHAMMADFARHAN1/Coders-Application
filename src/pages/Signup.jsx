@@ -11,14 +11,15 @@ import coding from "./../assets/coding.png";
 export default function Signup() {
   const [First, setFirstName] = useState("");
   const [Last, setLastName] = useState("");
-  const [Mail, setEmail] = useState("");
-  const [Pass, setPassword] = useState("");
+  const [Mail, setEmail] = useState("yuiyuiyu");
+  const [Pass, setPassword] = useState("yuiyui");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // You can process the login data here
-    console.log("Email:", email);
-    console.log("Password:", password);
+
+    console.log("Email:", Mail);
+    console.log("Password:", Pass);
   };
 
   return (
@@ -66,9 +67,11 @@ export default function Signup() {
               onChange={(e) => setPassword(e.target.value)}
               className=" bg-[#23155b] rounded py-1 text-white placeholder:p-2"
             />
+            <button type="submit" className="bg-blue-600">
+              Sign Up
+            </button>
           </form>
           <div>
-            <button className="bg-blue-600">Sign Up</button>
             <p>
               Already have an account? <span>Login</span>
             </p>
