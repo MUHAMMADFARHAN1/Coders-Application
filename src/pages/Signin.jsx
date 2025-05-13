@@ -1,7 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import coding from "./../assets/coding.png";
 
 export default function Signin() {
+
+    
   return (
     <div className="grid grid-cols-2 h-screen">
       <div className=" bg-[#23155b] ">
@@ -10,16 +13,19 @@ export default function Signin() {
       <div className=" bg-[#f4f4f4] ">
         <div className=" bg-white w-1/3 flex flex-col mx-auto mt-40 text-center gap-2 rounded py-8 min-w-min">
           <p className="pb-4">Join Coders Now!</p>
-          <input
-            className=" bg-[#23155b] w-2/5 mx-auto px-30 rounded py-1"
-            type="text"
-            name="Email"
-          />
-          <input
-            className=" bg-[#23155b] w-2/5 mx-auto px-30 rounded py-1"
-            type="text"
-            name="Password"
-          />
+          <form action="" className="flex flex-col gap-2">
+            <input
+              type="text"
+              name="Email"
+              placeholder="Email"
+              className=" bg-[#23155b] w-2/5 mx-auto px-30 rounded py-1 text-white"
+            />
+            <input
+              className=" bg-[#23155b] w-2/5 mx-auto px-30 rounded py-1"
+              type="text"
+              name="Password"
+            />
+          </form>
           <div>
             <button className="bg-blue-600">Login</button>
             <p>
