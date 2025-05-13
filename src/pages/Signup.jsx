@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import coding from "./../assets/coding.png";
+import { useNavigate } from "react-router";
 
 //Controlled and uncontrolled react forms!
 //https://www.freecodecamp.org/news/how-to-build-forms-in-react/
@@ -13,6 +14,12 @@ export default function Signup() {
   const [Last, setLastName] = useState("");
   const [Mail, setEmail] = useState("yuiyuiyu");
   const [Pass, setPassword] = useState("yuiyui");
+
+  //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+  //https://uibakery.io/regex-library/email
+
+  let Passregex = "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$";
+  let MailRegex = "/^S+@S+.S+$/";
 
   const handleSubmit = (event) => {
     event.preventDefault();

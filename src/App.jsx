@@ -6,6 +6,9 @@ import Signin from "./pages/Signin";
 import "./App.css";
 import { Link, NavLink, Route, Routes } from "react-router";
 
+//Protected Routes Logic
+// https://dev.to/collins87mbathi/reactjs-protected-route-m3j
+
 function App() {
   return (
     <>
