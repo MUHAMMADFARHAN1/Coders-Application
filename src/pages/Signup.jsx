@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import coding from "./../assets/coding.png";
-import { useNavigate } from "react-router";
+import { useNavigate, NavLink } from "react-router";
 
 //Controlled and uncontrolled react forms!
 //https://www.freecodecamp.org/news/how-to-build-forms-in-react/
@@ -92,7 +92,7 @@ export default function Signup() {
           </form>
           <div>
             <p>
-              Already have an account? <span>Login</span>
+              Already have an account? <NavLink to="/signin">Login</NavLink>
             </p>
           </div>
         </div>
