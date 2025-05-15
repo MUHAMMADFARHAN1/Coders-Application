@@ -7,14 +7,18 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+//Yup is simple javascript whereas zod is based on Typescript
+
 // synchronous and asynchronous YUP (https://strapi.io/blog/yup-validation-in-react-hook-form-a-complete-guide-with-examples)
 // React form Validation with yup (https://dev.to/lawaniej/form-validation-with-yup-2kmg) (https://medium.com/@olivier.trinh/how-to-create-form-validation-with-yup-library-in-reactjs-4846f045957a)
 //React form hook Validation with library (https://dev.to/franciscomendes10866/react-form-validation-with-react-hook-form-and-yup-4a98)
 
+// Yup schema is order and case sensitive watch out for it
 // Define Yup Schema
 const schema = yup.object({
   // name: yup.string().required("Name is required"),
-  email: yup.string(),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  password: yup.string().required("Password is required").min(8).max(32),
   // age: yup
   //   .number()
   //   .min(18, "You must be at least 18")
@@ -52,12 +56,15 @@ export default function Signin() {
               placeholder="Email"
               className=" bg-[#23155b]  rounded py-1 text-white placeholder:p-1"
             />
+            <p>{errors.email?.message}</p>
             <input
+              {...register("password")}
               className=" bg-[#23155b]  rounded py-1 text-white placeholder:p-1"
               type="text"
               placeholder="Password"
-              name="Password"
+              // name="Password"
             />
+            <p>{errors.password?.message}</p>
             <button type="submit" className="bg-blue-600">
               Login
             </button>
