@@ -65,7 +65,7 @@ export default function Signin() {
               // name="Password"
             />
             <p>{errors.password?.message}</p>
-            <button type="submit" className="bg-blue-600">
+            <button type="submit" className="bg-blue-600 rounded">
               Login
             </button>
           </form>
