@@ -4,8 +4,9 @@ import { Route } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 
-const ProtectedRoute = ({ path, exact, children }) => {
+const ProtectedRoute = ({ /*(path, exact,*/ children }) => {
   const auth = useSelector((store) => store.authenticated);
+  const navigateTo = useNavigate();
 
   //   return auth ? (
   //     <Route path={path} exact={exact}>
@@ -15,8 +16,8 @@ const ProtectedRoute = ({ path, exact, children }) => {
   //     <Redirect to="/" />
   //  );
 
-  if (!auth) {
-    return navigate("/signin");
+  if (auth) {
+    return navigateTo("/signin");
   }
   return children;
 };
