@@ -51,7 +51,7 @@ export default function Signin() {
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
     dispatch({ type: LOGIN_USER });
-    navigateTo("/");
+    navigateTo("/dashboard");
     // history.push("/");
   };
 
