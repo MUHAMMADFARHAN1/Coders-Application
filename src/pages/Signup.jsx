@@ -9,6 +9,10 @@ import { useNavigate, NavLink } from "react-router";
 //https://dev.to/theudemezue/how-to-handle-form-data-in-react-js-40na
 // There are two ways to validate the react form using state (for controlled components) and ref (for uncontroleed components)
 
+//Error message Integration in form in case of wrong values has also to be integrated here:
+//https://www.educative.io/answers/how-to-show-an-error-message-in-react
+
+
 export default function Signup() {
   const [First, setFirstName] = useState("");
   const [Last, setLastName] = useState("");
