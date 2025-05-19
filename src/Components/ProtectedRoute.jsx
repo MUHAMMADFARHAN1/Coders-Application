@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Route } from "react-router-dom";
+import { Outlet, Route } from "react-router-dom";
 
 import { useNavigate, Navigate } from "react-router-dom";
 
@@ -16,10 +16,11 @@ const ProtectedRoute = ({ /*(path, exact,*/ children }) => {
   //     <Redirect to="/" />
   //  );
 
-  if (!auth) {
-    return <Navigate to="/signin" replace />;
-  }
-  return children;
+  // if (!auth) {
+  //   return <Navigate to="/signin" replace />;
+  // }
+  // return children;
+  return auth ? <Outlet /> : <Navigate to="/signin" />;
 };
 
 export default ProtectedRoute;
