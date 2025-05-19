@@ -7,6 +7,14 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+import { useDispatch } from "react-redux";
+// import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
+
+import { LOGIN_USER } from "./../redux/slice/types";
+
+import { useSelector } from "react-redux";
+
 //Yup is simple javascript whereas zod is based on Typescript
 
 // synchronous and asynchronous YUP (https://strapi.io/blog/yup-validation-in-react-hook-form-a-complete-guide-with-examples)
@@ -26,6 +34,12 @@ const schema = yup.object({
 });
 
 export default function Signin() {
+  const dispatch = useDispatch();
+  // const history = useHistory();
+  const navigateTo = useNavigate();
+  const auth = useSelector((store) => store.authenticated);
+  console.log(auth);
+
   const {
     register,
     handleSubmit,
@@ -36,6 +50,9 @@ export default function Signin() {
 
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
+    dispatch({ type: LOGIN_USER });
+    navigateTo("/");
+    // history.push("/");
   };
 
   return (

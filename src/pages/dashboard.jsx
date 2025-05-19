@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function dashboard() {
+import { useSelector } from "react-redux";
+
+export default function Dashboard() {
+  const auth = useSelector((store) => store.authenticated);
+
+  console.log(auth);
   return (
     <div>
       <p>Dashboard</p>
