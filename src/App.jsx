@@ -6,6 +6,8 @@ import Signin from "./pages/Signin";
 import "./App.css";
 import { Link, NavLink, Route, Routes } from "react-router";
 
+// There multiple ways of performing protection routes and doing State management for them, but centralized state along with inbuilt protect routes is best.
+
 //Protected Routes Logic
 // https://dev.to/collins87mbathi/reactjs-protected-route-m3j
 
