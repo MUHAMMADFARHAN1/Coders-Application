@@ -45,12 +45,11 @@ export default function Navbar() {
             />
           </svg>
           <div className="flex flex-row gap-8 mt-2">
-            <p>Dashboard</p>
-            <p>Profile </p>
-            <p>Leaderboard </p>
-            <p>Challenges </p>
-            <p>Workspace </p>
-            <p></p>
+            <NavLink to="/dashboard">Dashboard</NavLink>
+            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/leaderboard">Leaderboard</NavLink>
+            <NavLink to="/challenges">Challenges</NavLink>
+            <NavLink to="/workspace">Workspace</NavLink>
           </div>
         </div>
         <button onClick={logout}>Logout</button>

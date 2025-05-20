@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 
-export default function Dashboard() {
-
+export default function PageNotFound() {
   return (
     <>
       <Navbar />
-      <h1>Welcome to the dashboard!</h1>
+      <div>
+        <p>Sorry, the page could not be located.</p>
+      </div>
     </>
   );
 }

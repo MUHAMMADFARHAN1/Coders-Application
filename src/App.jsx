@@ -10,6 +10,7 @@ import store from "./redux/slice/store";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import Leaderboard from "./pages/leaderboard";
+import PageNotFound from "./pages/PageNotFound";
 
 // There multiple ways of performing protection routes and doing State management for them, but centralized state along with inbuilt protect routes is best.
 
@@ -29,6 +30,8 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/leaderboard" element={<Leaderboard />} />
             </Route>
+            <Route path="*" element={<PageNotFound />} />{" "}
+            {/* Catch-all route for 404 */}
           </Route>
         </Routes>
       </Provider>
