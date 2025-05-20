@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate, NavLink } from "react-router";
 import { useState } from "react";
 import FeatherIcon from "feather-icons-react";
+import { Avatar } from "radix-ui";
 
 import { LOGIN_USER, LOGOUT_USER } from "./../redux/slice/types";
 
@@ -62,6 +63,16 @@ export default function Navbar() {
             className="mt-2"
             icon={icon1}
           />
+          <Avatar.Root className="AvatarRoot">
+            <Avatar.Image
+              className="AvatarImage"
+              src="https://images.unsplash.com/photo-1511485977113-f34c92461ad9?ixlib=rb-1.2.1&w=128&h=128&dpr=2&q=80"
+              alt="Pedro Duarte"
+            />
+            <Avatar.Fallback className="AvatarFallback" delayMs={600}>
+              JD
+            </Avatar.Fallback>
+          </Avatar.Root>
         </div>
       </div>
     </div>
