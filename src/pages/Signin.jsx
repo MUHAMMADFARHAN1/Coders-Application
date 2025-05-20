@@ -40,6 +40,14 @@ export default function Signin() {
   const auth = useSelector((store) => store.authenticated);
   console.log(auth);
 
+  const token = localStorage.getItem("token");
+  // dispatch = useDispatch();
+
+  if (token) {
+    dispatch({ type: LOGIN_USER });
+    // Additional logic to validate the token and fetch user details
+  }
+
   const {
     register,
     handleSubmit,
@@ -52,6 +60,7 @@ export default function Signin() {
     console.log("Form Submitted:", data);
     dispatch({ type: LOGIN_USER });
     navigateTo("/dashboard");
+    localStorage.setItem("token", true);
     // history.push("/");
   };
 
