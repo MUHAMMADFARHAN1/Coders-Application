@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, NavLink } from "react-router";
+import FeatherIcon from "feather-icons-react";
 
 import { LOGIN_USER, LOGOUT_USER } from "./../redux/slice/types";
 
@@ -52,7 +53,10 @@ export default function Navbar() {
             <NavLink to="/workspace">Workspace</NavLink>
           </div>
         </div>
-        <button onClick={logout}>Logout</button>
+        <div className=" flex flex-row gap-8">
+          <button onClick={logout}>Logout</button>
+          <FeatherIcon className="mt-2" icon="sun" />
+        </div>
       </div>
     </div>
   );
