@@ -16,6 +16,7 @@ export default function Dashboard() {
 
   const logout = () => {
     localStorage.removeItem("token");
+    dispatch({ type: LOGOUT_USER });
     navigateTo("/signin");
   };
 
