@@ -8,14 +8,21 @@ import { LOGIN_USER } from "./../redux/slice/types";
 export default function Dashboard() {
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
+  const navigateTo = useNavigate();
 
   if (token) {
     dispatch({ type: LOGIN_USER });
   }
 
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigateTo("/signin");
+  };
+
   return (
-    <div>
+    <div className=" flex flex-row mt-8 mx-18 justify-between">
       <p>Dashboard</p>
+      <button onClick={logout()}>Logout</button>
     </div>
   );
 }
