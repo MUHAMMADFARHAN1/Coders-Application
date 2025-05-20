@@ -58,7 +58,7 @@ export default function Navbar() {
         <div className=" flex flex-row gap-8">
           <button onClick={logout}>Logout</button>
           <FeatherIcon
-            onClick={() => setIcon("moon")}
+            onClick={() => (icon1 == "sun" ? setIcon("moon") : setIcon("sun"))}
             className="mt-2"
             icon={icon1}
           />
