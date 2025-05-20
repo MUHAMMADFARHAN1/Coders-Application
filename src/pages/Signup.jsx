@@ -12,12 +12,14 @@ import { useNavigate, NavLink } from "react-router";
 //Error message Integration in form in case of wrong values has also to be integrated here:
 //https://www.educative.io/answers/how-to-show-an-error-message-in-react
 
-
 export default function Signup() {
   const [First, setFirstName] = useState("");
   const [Last, setLastName] = useState("");
   const [Mail, setEmail] = useState("");
   const [Pass, setPassword] = useState("");
+
+  const [errorMessageMail, setErrorMessageMail] = useState("");
+  const [errorMessagePass, setErrorMessagePass] = useState("");
 
   let navigate = useNavigate();
 
@@ -29,17 +31,16 @@ export default function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    // You can process the login data here
-    let result = MailRegex.test(Mail);
-    console.log(result);
-    if (!MailRegex.test(Mail)) {
-      alert("wrong email");
-    }
-    // else if ()
 
-    // else if ()
-    else {
+    // You can process the login data here
+    // Check for errors
+    if (!MailRegex.test(Mail)) {
+      setErrorMessageMail("Invalid Email");
+      return;
+    } else if (!Passregex.test(Pass)) {
+      setErrorMessagePass("Invalid Password");
+      return;
+    } else {
       navigate("/signin");
     }
   };
@@ -81,6 +82,9 @@ export default function Signup() {
               onChange={(e) => setEmail(e.target.value)}
               className=" bg-[#23155b] rounded py-1 text-white placeholder:p-2"
             />
+            {errorMessageMail && (
+              <div className="error">{errorMessageMail}</div>
+            )}
             <input
               type="text"
               name="Password"
@@ -89,6 +93,9 @@ export default function Signup() {
               onChange={(e) => setPassword(e.target.value)}
               className=" bg-[#23155b] rounded py-1 text-white placeholder:p-2"
             />
+            {errorMessagePass && (
+              <div className="error">{errorMessagePass}</div>
+            )}
             <button type="submit" className="bg-blue-600">
               Sign Up
             </button>
