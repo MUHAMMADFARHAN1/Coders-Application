@@ -2,6 +2,7 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useNavigate, NavLink } from "react-router";
 
 import { LOGIN_USER } from "./../redux/slice/types";
 
@@ -16,14 +17,15 @@ export default function Dashboard() {
 
   const logout = () => {
     localStorage.removeItem("token");
-    dispatch({ type: LOGOUT_USER });
+    // dispatch({ type: LOGOUT_USER });
     navigateTo("/signin");
+    console.log("Hello");
   };
 
   return (
     <div className=" flex flex-row mt-8 mx-18 justify-between">
       <p>Dashboard</p>
-      <button onClick={logout()}>Logout</button>
+      <button onClick={logout}>Logout</button>
     </div>
   );
 }
