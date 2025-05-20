@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, NavLink } from "react-router";
+import { useState } from "react";
 import FeatherIcon from "feather-icons-react";
 
 import { LOGIN_USER, LOGOUT_USER } from "./../redux/slice/types";
@@ -13,6 +14,7 @@ export default function Navbar() {
   if (token) {
     dispatch({ type: LOGIN_USER });
   }
+  const [icon1, setIcon] = useState("sun");
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -55,7 +57,11 @@ export default function Navbar() {
         </div>
         <div className=" flex flex-row gap-8">
           <button onClick={logout}>Logout</button>
-          <FeatherIcon className="mt-2" icon="sun" />
+          <FeatherIcon
+            onClick={() => setIcon("moon")}
+            className="mt-2"
+            icon={icon1}
+          />
         </div>
       </div>
     </div>
