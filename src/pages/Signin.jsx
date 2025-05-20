@@ -79,7 +79,7 @@ export default function Signin() {
           </form>
           <div>
             <p>
-              Already have an account? <NavLink to="/">Signup</NavLink>
+              New to CodeCLA? <NavLink to="/">Signup</NavLink>
             </p>
           </div>
         </div>
