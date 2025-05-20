@@ -7,7 +7,6 @@ import { LOGIN_USER } from "./types";
 
 const intitialState = {
   authenticated: false,
-  //   authenticated: true,
 };
 
 const reducer = (state = intitialState, action) => {
@@ -18,7 +17,6 @@ const reducer = (state = intitialState, action) => {
     default:
       return state;
   }
-  //   return { ...state, authenticated: true };
 };
 
 const store = configureStore({ reducer });

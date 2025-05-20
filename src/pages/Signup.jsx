@@ -29,6 +29,7 @@ export default function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     // You can process the login data here
     let result = MailRegex.test(Mail);
     console.log(result);
@@ -41,8 +42,6 @@ export default function Signup() {
     else {
       navigate("/signin");
     }
-    // console.log("Email:", Mail);
-    // console.log("Password:", Pass);
   };
 
   return (

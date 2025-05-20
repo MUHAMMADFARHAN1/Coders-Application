@@ -16,18 +16,6 @@ const ProtectedRoute = ({ /*(path, exact,*/ children }) => {
     return <Outlet />;
   }
 
-  //   return auth ? (
-  //     <Route path={path} exact={exact}>
-  //       {children}
-  //     </Route>
-  //   ) : (
-  //     <Redirect to="/" />
-  //  );
-
-  // if (!auth) {
-  //   return <Navigate to="/signin" replace />;
-  // }
-  // return children;
   return auth ? <Outlet /> : <Navigate to="/signin" />;
 };
 
