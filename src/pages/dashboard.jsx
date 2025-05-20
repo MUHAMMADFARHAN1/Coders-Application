@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { LOGIN_USER } from "./../redux/slice/types";
 
 export default function Dashboard() {
-  const auth = useSelector((store) => store.authenticated);
+  // const auth = useSelector((store) => store.authenticated);
   const token = localStorage.getItem("token");
   const dispatch = useDispatch();
 
@@ -15,7 +15,7 @@ export default function Dashboard() {
     // Additional logic to validate the token and fetch user details
   }
 
-  console.log(auth);
+  // console.log(auth);
   return (
     <div>
       <p>Dashboard</p>
