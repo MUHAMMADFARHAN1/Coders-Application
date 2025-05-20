@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate, NavLink } from "react-router";
 
-import { LOGIN_USER } from "./../redux/slice/types";
+import { LOGIN_USER, LOGOUT_USER } from "./../redux/slice/types";
 
 export default function Dashboard() {
   const token = localStorage.getItem("token");
@@ -17,7 +17,7 @@ export default function Dashboard() {
 
   const logout = () => {
     localStorage.removeItem("token");
-    // dispatch({ type: LOGOUT_USER });
+    dispatch({ type: LOGOUT_USER });
     navigateTo("/signin");
     console.log("Hello");
   };
