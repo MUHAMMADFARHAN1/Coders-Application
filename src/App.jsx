@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import store from "./redux/slice/store";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import Leaderboard from "./pages/leaderboard";
 
 // There multiple ways of performing protection routes and doing State management for them, but centralized state along with inbuilt protect routes is best.
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/signin" element={<Signin />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
             </Route>
           </Route>
         </Routes>
