@@ -6,7 +6,7 @@ import Signin from "./pages/Signin";
 import "./App.css";
 import { Link, NavLink, Route, Routes } from "react-router";
 import { Provider } from "react-redux";
-import store from "./redux/slice/store";
+import store from "./redux/store";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import Leaderboard from "./pages/leaderboard";

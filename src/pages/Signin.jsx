@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 //Redux state management code is here
 import { useDispatch } from "react-redux";
-import { LOGIN_USER } from "./../redux/slice/types";
+import { LOGIN_USER } from "../redux/types";
 import { useSelector } from "react-redux";
 
 //Yup is simple javascript whereas zod is based on Typescript

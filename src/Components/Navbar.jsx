@@ -5,7 +5,7 @@ import { useState } from "react";
 import FeatherIcon from "feather-icons-react";
 import { Avatar } from "radix-ui";
 
-import { LOGIN_USER, LOGOUT_USER } from "./../redux/slice/types";
+import { LOGIN_USER, LOGOUT_USER } from "../redux/types";
 
 export default function Navbar() {
   const token = localStorage.getItem("token");
