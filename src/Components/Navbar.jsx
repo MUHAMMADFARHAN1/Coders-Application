@@ -4,7 +4,7 @@ import { useNavigate, NavLink } from "react-router";
 import { useState } from "react";
 import FeatherIcon from "feather-icons-react";
 import { Avatar } from "radix-ui";
-import { login } from "../redux/slice/authenticationSlice";
+import { login, logout } from "../redux/slice/authenticationSlice";
 
 import { LOGIN_USER, LOGOUT_USER } from "../redux/types";
 
@@ -19,10 +19,10 @@ export default function Navbar() {
   }
   const [icon1, setIcon] = useState("sun");
 
-  const logout = () => {
+  const logoutuser = () => {
     localStorage.removeItem("token");
     // dispatch({ type: LOGOUT_USER });
-    dispatch(login(LOGIN_USER));
+    dispatch(logout(LOGOUT_USER));
     navigateTo("/signin");
     console.log("Hello");
   };
@@ -60,7 +60,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className=" flex flex-row gap-8">
-          <button onClick={logout}>Logout</button>
+          <button onClick={logoutuser}>Logout</button>
           <FeatherIcon
             onClick={() => (icon1 == "sun" ? setIcon("moon") : setIcon("sun"))}
             className="mt-2"
