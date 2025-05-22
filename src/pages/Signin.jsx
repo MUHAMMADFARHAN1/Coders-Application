@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 //Redux state management code is here
 import { useDispatch } from "react-redux";
 import { LOGIN_USER } from "../redux/types";
+import { login } from "../redux/slice/authenticationSlice";
 import { useSelector } from "react-redux";
 
 //Yup is simple javascript whereas zod is based on Typescript
@@ -30,7 +31,7 @@ const schema = yup.object({
 export default function Signin() {
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
-  const auth = useSelector((store) => store.authenticated);
+  const auth = useSelector((store) => store.aut.authenticated);
   console.log(auth);
 
   const {
@@ -43,7 +44,8 @@ export default function Signin() {
 
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
-    dispatch({ type: LOGIN_USER });
+    // dispatch({ type: LOGIN_USER });
+    dispatch(login(LOGIN_USER));
     navigateTo("/dashboard");
     localStorage.setItem("token", true);
   };

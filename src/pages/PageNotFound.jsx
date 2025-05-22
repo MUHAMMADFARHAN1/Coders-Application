@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 import { useSelector } from "react-redux";
 
 export default function PageNotFound() {
-  const auth = useSelector((store) => store.authenticated);
+  const auth = useSelector((store) => store.aut.authenticated);
   console.log(auth);
   return (
     <>

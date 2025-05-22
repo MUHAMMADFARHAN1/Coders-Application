@@ -4,6 +4,7 @@ import { useNavigate, NavLink } from "react-router";
 import { useState } from "react";
 import FeatherIcon from "feather-icons-react";
 import { Avatar } from "radix-ui";
+import { login } from "../redux/slice/authenticationSlice";
 
 import { LOGIN_USER, LOGOUT_USER } from "../redux/types";
 
@@ -13,13 +14,15 @@ export default function Navbar() {
   const navigateTo = useNavigate();
 
   if (token) {
-    dispatch({ type: LOGIN_USER });
+    // dispatch({ type: LOGIN_USER });
+    dispatch(login(LOGIN_USER));
   }
   const [icon1, setIcon] = useState("sun");
 
   const logout = () => {
     localStorage.removeItem("token");
-    dispatch({ type: LOGOUT_USER });
+    // dispatch({ type: LOGOUT_USER });
+    dispatch(login(LOGIN_USER));
     navigateTo("/signin");
     console.log("Hello");
   };

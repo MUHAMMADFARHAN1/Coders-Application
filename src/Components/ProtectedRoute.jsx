@@ -12,7 +12,7 @@ import { useNavigate, Navigate } from "react-router-dom";
 //
 
 const ProtectedRoute = ({ /*(path, exact,*/ children }) => {
-  const auth = useSelector((store) => store.authenticated);
+  const auth = useSelector((state) => state.aut.authenticated);
   const navigateTo = useNavigate();
 
   const token = localStorage.getItem("token");
